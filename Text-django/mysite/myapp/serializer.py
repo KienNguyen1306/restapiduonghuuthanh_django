@@ -20,7 +20,7 @@ class UserSerializer(ModelSerializer):
         user = User(**validated_data)
         # user.first_name = validated_data['first_name']
         # ...
-        # user.set_password(validated_data['password'])
+        user.set_password(validated_data['password'])
 
         
         user.save()
