@@ -42,7 +42,8 @@ class Lesson(ItemBase):
     # content =models.TextField()
     content =RichTextField()
     couses = models.ForeignKey(Couses,related_name="lesson",on_delete=models.CASCADE)
-    tags = models.ManyToManyField('Tag',blank=True,null=True)
+    tags = models.ManyToManyField('Tag',related_name="lesson",blank=True,null=True)
+
 
     def __str__(self):
         return self.content
